@@ -21,6 +21,7 @@ router.use('/halls',hallsHandler);
 router.get('/', (req, res) => {
   res.send('ok');
 });
+router.post('/halls/create', hallsHandler);
 
 app.use('/', router);
 
