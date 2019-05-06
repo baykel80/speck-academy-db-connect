@@ -23,7 +23,7 @@ router.get('/', (req, res) => {
 });
 router.post('/halls/create', hallsHandler);
 router.put('/:hallID/update', hallsHandler);
-
+router.delete('/:hallID/delete', hallsHandler);
 app.use('/', router);
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));

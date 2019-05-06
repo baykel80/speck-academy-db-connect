@@ -61,7 +61,18 @@ const hallUpdate = (req,res,next) => {
             }
             res.send('Hall updated successfully');
         });
-    console.log(hall);
+    //console.log(hall);
+}
+
+const hallDelete=(req,res,next) => {
+    const hallId=req.params.hallId;
+    console.log(hallId);
+    db.query('DELETE FROM halls WHERE hall_uid =$1',[hallId],(err,result)=>{
+        if(err){
+            return next(err);
+        }
+        res.send("Hall deleted");
+    });
 }
 
 module.exports={
