@@ -22,6 +22,7 @@ router.get('/', (req, res) => {
   res.send('ok');
 });
 router.post('/halls/create', hallsHandler);
+router.put('/:hallID/update', hallsHandler);
 
 app.use('/', router);
 

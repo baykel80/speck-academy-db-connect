@@ -38,10 +38,36 @@ const createNewHall = (req,res,next) => {
         }
         res.send('Hall Created successfully');
     });
+    //console.log(hall);
+}
+
+const hallUpdate = (req,res,next) => {
+    const hall={
+        id : req.body.hall_uid,
+        name : req.body.hall_name,
+        address : req.body.hall_address,
+        img_i : req.body.img,
+        size_s : req.body.size,
+        datecreated_d : req.body.datecreated,
+        dateupdated_d : req.body.dateupdated
+    };
+    const hallId=req.params.hallId;
+    let query="UPDATE halls SET hall_name='" + hall.name + "', hall_address='" + hall.address + "', img='" + hall.img_i + 
+    "', size ='" + hall.size_s + "',datecreated='" + hall.datecreated_d + "',dateupdated='" + hall.dateupdated_d 
+    + "' WHERE hall_uid=$1";
+    db.query(query,[hallId],(err,result)=>{
+        if (err) {
+                return next(err);
+            }
+            res.send('Hall updated successfully');
+        });
     console.log(hall);
 }
+
 module.exports={
     getHalls,
     getHallsById,
     createNewHall,
+    hallUpdate,
+    hallDelete,
 };
