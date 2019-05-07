@@ -6,8 +6,8 @@ const router=new express.Router();
 router.route('/')
     .get(usersController.getUsers);
 router.route('/users/:usersId').get(usersController.getUsersById);
-//router.route('/reservations/create'). post(reservationsController.createNewReservation);
-//router.route('/reservations/:reservationsId/update'). put(reservationsController.reservationUpdate);
-//router.route('/reservations/:reservationsId/delete'). delete(reservationsController.reservationDelete);
+router.route('/users/create'). post(usersController.createNewUser);
+//router.route('/reservations/:reservationsId/update'). put(usersController.reservationUpdate);
+//router.route('/reservations/:reservationsId/delete'). delete(usersController.reservationDelete);
 
 module.exports=router;   

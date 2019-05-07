@@ -36,6 +36,9 @@ router.put('/reservations/:reservationId/update', reservationsHandler);
 router.delete('/reservations/:reservationId/delete', reservationsHandler);
 
 router.get('/users/:usersId',usersHandler);
+router.post('/users/create', usersHandler);
+
+
 
 app.use('/', router);
 
