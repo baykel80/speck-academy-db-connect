@@ -8,6 +8,6 @@ router.route('/')
 router.route('/users/:usersId').get(usersController.getUsersById);
 router.route('/users/create'). post(usersController.createNewUser);
 router.route('/users/:usersId/update'). put(usersController.userUpdate);
-//router.route('/reservations/:reservationsId/delete'). delete(usersController.reservationDelete);
+router.route('/users/:usersId/delete'). delete(usersController.userDelete);
 
 module.exports=router;   

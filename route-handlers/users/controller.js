@@ -45,10 +45,21 @@ const userUpdate = (req,res,next) => {
         });
 }
 
+const userDelete=(req,res,next) => {
+    const userId=req.params.usersId;
+    //console.log(userId);
+    db.query('DELETE FROM users WHERE user_uid =$1',[userId],(err,result)=>{
+        if(err){
+            return next(err);
+        }
+        res.send("User deleted");
+    });
+}
+
 module.exports={
     getUsers,
     getUsersById,
     createNewUser,
     userUpdate,
-    //reservationDelete,
+    userDelete,
 };
