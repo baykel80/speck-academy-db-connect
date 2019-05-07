@@ -8,5 +8,6 @@ router.route('/')
 router.route('/reservations/:reservationsId').get(reservationsController.getReservationsById);
 router.route('/reservations/create'). post(reservationsController.createNewReservation);
 router.route('/reservations/:reservationsId/update'). put(reservationsController.reservationUpdate);
+router.route('/reservations/:reservationsId/delete'). delete(reservationsController.reservationDelete);
 
 module.exports=router;   

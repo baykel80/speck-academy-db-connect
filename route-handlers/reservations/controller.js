@@ -44,9 +44,21 @@ const reservationUpdate = (req,res,next) => {
         });
 }
 
+const reservationDelete=(req,res,next) => {
+    const reservationId=req.params.reservationsId;
+    console.log(reservationId);
+    db.query('DELETE FROM reservations WHERE reservation_uid =$1',[reservationId],(err,result)=>{
+        if(err){
+            return next(err);
+        }
+        res.send("Reservation deleted");
+    });
+}
+
 module.exports={
     getReservations,
     getReservationsById,
     createNewReservation,
     reservationUpdate,
+    reservationDelete,
 };

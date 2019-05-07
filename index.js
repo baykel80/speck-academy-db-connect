@@ -31,6 +31,9 @@ router.delete('/halls/:hallID/delete', hallsHandler);
 router.get('/reservations/:reservationsId',reservationsHandler);
 router.post('/reservations/create', reservationsHandler);
 router.put('/reservations/:reservationId/update', reservationsHandler);
+router.delete('/reservations/:reservationId/delete', reservationsHandler);
+
+
 app.use('/', router);
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
