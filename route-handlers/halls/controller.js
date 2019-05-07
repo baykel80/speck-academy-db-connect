@@ -30,7 +30,7 @@ const createNewHall = (req,res,next) => {
         dateupdated_d : req.body.dateupdated
     };
     let query="INSERT INTO halls (hall_uid,hall_name,hall_address,img,size,datecreated,dateupdated) VALUES ('" + 
-    hall.id + "','" + hall.name + "','" +hall.address + "','" + req.body.img + "','" + hall.size_s + "','" + 
+    hall.id + "','" + hall.name + "','" +hall.address + "','" + hall.img_i + "','" + hall.size_s + "','" + 
     hall.datecreated_d + "','" + hall.dateupdated_d + "')";
     db.query(query,(err,result)=>{
     if (err) {

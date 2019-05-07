@@ -29,6 +29,7 @@ router.put('/:hallID/update', hallsHandler);
 router.delete('/:hallID/delete', hallsHandler);
 
 router.get('/reservations/:reservationsId',reservationsHandler);
+router.post('/reservations/create', reservationsHandler);
 app.use('/', router);
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));

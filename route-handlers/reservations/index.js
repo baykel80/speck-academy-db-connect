@@ -6,5 +6,6 @@ const router=new express.Router();
 router.route('/')
     .get(reservationsController.getReservations);
 router.route('/reservations/:reservationsId').get(reservationsController.getReservationsById);
+router.route('/reservations/create'). post(reservationsController.createNewReservation);
 
 module.exports=router;   
