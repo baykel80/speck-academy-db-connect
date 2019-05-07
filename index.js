@@ -25,11 +25,12 @@ router.get('/', (req, res) => {
 });
 router.get('/halls/:hallsId',hallsHandler);
 router.post('/halls/create', hallsHandler);
-router.put('/:hallID/update', hallsHandler);
-router.delete('/:hallID/delete', hallsHandler);
+router.put('/halls/:hallId/update', hallsHandler);
+router.delete('/halls/:hallID/delete', hallsHandler);
 
 router.get('/reservations/:reservationsId',reservationsHandler);
 router.post('/reservations/create', reservationsHandler);
+router.put('/reservations/:reservationId/update', reservationsHandler);
 app.use('/', router);
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));

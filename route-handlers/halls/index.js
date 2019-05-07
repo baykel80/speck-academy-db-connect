@@ -7,6 +7,6 @@ router.route('/')
     .get(hallsController.getHalls);
 router.route('/halls/:hallId').get(hallsController.getHallsById);
 router.route('/halls/create'). post(hallsController.createNewHall);
-router.route('/:hallId/update'). put(hallsController.hallUpdate);
-router.route('/:hallId/delete'). delete(hallsController.hallDelete);
+router.route('/halls/:hallId/update'). put(hallsController.hallUpdate);
+router.route('/halls/:hallId/delete'). delete(hallsController.hallDelete);
 module.exports=router;
